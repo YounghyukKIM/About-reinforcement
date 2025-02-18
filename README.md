@@ -155,11 +155,11 @@ $\rightarrow$ $Q^\pi(s,a)=R(s,a)+\gamma \sum_{s'}P(s'|s,a)V^{\pi}(s')$
 
 $V^{\pi}(s')$를 정책 $\pi$를 통해 아래와 같이 확장할 수 있습니다.
 
-$\rightarrow$$V^{\pi}(s')=\sum_{a'}\pi(a'|s')Q^{\pi}(s',a')$
+$\rightarrow$ $V^{\pi}(s')=\sum_{a'}\pi(a'|s')Q^{\pi}(s',a')$
 
 이 $V^{\pi}(s')$를 $Q^{\pi}(s,a)$에 대입하면 아래와 같이 표현 할 수 있을 것 입니다.
 
-$\rightarrow$$Q^{\pi}(s,a)=R(s,a)+\gamma \sum_{s'}P(s'|s,a) \sum_{a'}\pi(a'|s')Q^{\pi}(s'|s')$
+$\rightarrow$ $Q^{\pi}(s,a)=R(s,a)+\gamma \sum_{s'}P(s'|s,a) \sum_{a'}\pi(a'|s')Q^{\pi}(s'|s')$
 
 
 즉 액션가치 함수는 상태가치에 액션에 대한 확률값들을 그대로 유도하여 더하면 되는 공식입니다.
@@ -197,7 +197,7 @@ Q-Learning은 Step마다 값을 업데이트하는 방식입니다. 즉, 행동 
 
 
 **Off-Policy와 $\varepsilon$-탐욕적 정책**
-Q-Learning이 Off-Policy인 이유는 학습 중 사용하는 **목표 정책(target policy)**과 데이터를 수집하는 **행동 정책(behavior policy)**이 다르기 때문입니다.
+Q-Learning이 Off-Policy인 이유는 학습 중 사용하는 **목표 정책(target policy)** 과 데이터를 수집하는 **행동 정책(behavior policy)** 이 다르기 때문입니다.
 
 Q-Learning에서 행동 정책으로는 주로 $\varepsilon$-탐욕적 정책을 사용합니다. $\varepsilon$은 0과 1 사이의 확률값으로, 에이전트가 다음 행동을 결정할 때 무작위 탐험(Exploration)을 할지, Q-값을 기반으로 행동을 선택할지(Exploitation)를 결정합니다.
 
@@ -256,7 +256,7 @@ $Q(s,a) \leftarrow Q(s,a)+\alpha[R+\gamma Q(s',a')-Q(s,a)]$
 즉, 행동 정책이 학습 과정에서 직접적으로 영향을 미칩니다.
 
 On-Policy와 $\varepsilon$-탐욕적 정책
-Sarsa는 On-Policy 알고리즘으로, 학습 중 사용하는 **목표 정책(target policy)**과 데이터를 수집하는 **행동 정책(behavior policy)**이 동일합니다.
+Sarsa는 On-Policy 알고리즘으로, 학습 중 사용하는 **목표 정책(target policy)** 과 데이터를 수집하는 **행동 정책(behavior policy)** 이 동일합니다.
 
 행동 정책으로 주로 $\varepsilon$-탐욕적 정책을 사용합니다.
 
