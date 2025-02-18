@@ -20,7 +20,6 @@
 - On policy : 학습 중 현재 사용 중인 정책을 기반으로 학습.
 - Off policy : 학습 중 **목표 정책(target policy)** 과 데이터 수집에 사용하는 **행동 정책(behavior policy)** 이 다름.
 - $\pi$(정책) : 정책은 에이전트가 특정 상태에서 어떤 행동을 선택할지 결정하는 규칙
-
 ---
 
 ## MDP(Markov Decision Process)
