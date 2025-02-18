@@ -5,7 +5,7 @@ Table of Contents
 - Bellman Equation
 - Q-Learning
 - SARSA
-- Q-Learning과 SARSA 비교
+- Q-Learning Vs SARSA
 ---
 
 ## Basic Knowledge Before Starting
