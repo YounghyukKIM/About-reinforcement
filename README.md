@@ -61,17 +61,18 @@ $\rightarrow$ $G_t = R_t+\gamma R_{t+1}+\gamma^{2} R_{r+2} + ... + \gamma^{k}R_{
 
 **수식 설명**
 이 수식을 설명해 보자면
-$R$ : 은 보상으로 즉각적인 형태에서 받는 보상입니다.
-$t$ : 각 타임스텝의 시간을 의미합니다.
-$\gamma$ : 감가율로 미래보상을 얼마나 중요시 여길지 결정하는 값입니다.
+- $R$ : 은 보상으로 즉각적인 형태에서 받는 보상입니다.
+- $t$ : 각 타임스텝의 시간을 의미합니다.
+- $\gamma$ : 감가율로 미래보상을 얼마나 중요시 여길지 결정하는 값입니다.
 
 
 **예제**
 
 가정
-$Time step$ = 10
-$total Reward$ = 100
-$\gamma$ = 0.9
+- $Time step$ = 10
+- $total Reward$ = 100
+- $\gamma$ = 0.9
+  
 각 Step 마다 받은 보상 10이라고 가정, 
 
 
@@ -187,7 +188,7 @@ Q-learning의 내용은 아래에서 다루겠지만 환경을 경험하며 Q-Va
 Q-Learning은 환경을 직접 경험하며 보상을 기반으로 Q-값을 업데이트하고 학습하는 방법입니다. Q-Learning은 강화학습의 대표적인 Off-Policy 알고리즘입니다.
 
 **Q-Learning의 업데이트 수식**
-$Q(s,a) \leftarrow Q(s,a)+\alpha [R+\gamma \max_{a'} Q(s', a')-Q(s,a)]$
+- $Q(s,a) \leftarrow Q(s,a)+\alpha [R+\gamma \max_{a'} Q(s', a')-Q(s,a)]$
 
 이 수식은 현재 상태에서 특정 행동을 취한 결과로 얻은 보상과, 다음 상태에서 최적 행동을 선택했을 때의 Q-값을 기반으로 값을 업데이트합니다.
 
@@ -231,17 +232,22 @@ Q-Learning에서 행동 정책으로는 주로 $\varepsilon$-탐욕적 정책을
 업데이트 과정
 - 현재 $Q(s=0,a=2) = 2$
 - 다음 상태 s' = 1에서 최대 Q-value 계산
-	$max_{a'}Q(s'=1,a') = max{Q(1,0),Q(1,1),Q(1,2)} = 4$ # Q(1,2)의 값이 가장 크기 때문.
+	- $max_{a'}Q(s'=1,a') = max{Q(1,0),Q(1,1),Q(1,2)} = 4$ # Q(1,2)의 값이 가장 크기 때문.
     
 업데이트 공식 대입
+
 $(s=0,a=2) \leftarrow 2+01[5+0.9 \cdot4-2]$
 
 계산
+
 $\rightarrow Q(s=0,a=2) \leftarrow 2+0.1[5+3.6]$
+
 $\rightarrow Q(s=0,a=2) \leftarrow 2+0.1 \cdot 6.6$
+
 $\rightarrow Q(s=0,a=2) \leftarrow 2+0.66 = 2.66$
 
 결과
+
 $\rightarrow Q(s=0,a=2) = 2.66$
 
 
@@ -251,7 +257,7 @@ $\rightarrow Q(s=0,a=2) = 2.66$
 Sarsa는 강화학습의 대표적인 On-Policy 알고리즘으로, 에이전트가 환경과 상호작용하며 행동을 선택하고 학습하는 방법입니다. Sarsa는 "State-Action-Reward-State-Action"의 약자로, 현재 상태와 행동, 보상, 다음 상태와 행동을 기반으로 학습이 진행됩니다.
 
 **SARSA의 업데이트 공식**
-$Q(s,a) \leftarrow Q(s,a)+\alpha[R+\gamma Q(s',a')-Q(s,a)]$
+- $Q(s,a) \leftarrow Q(s,a)+\alpha[R+\gamma Q(s',a')-Q(s,a)]$
 이 수식은 다음 상태에서 실제로 수행한 행동의 Q-값을 기반으로 값을 업데이트합니다.
 즉, 행동 정책이 학습 과정에서 직접적으로 영향을 미칩니다.
 
@@ -291,11 +297,13 @@ $\varepsilon$: 에이전트가 무작위 탐험(Exploration)을 할지, Q-값을
 - 다음 상태의 s'=1에서 다음 행동 a'= 1의 Q값 : Q(s'= 1,a'=1)=3
 
 업데이트 공식 대입
-$Q(s=0,a=2)\leftarrow2+0.1[5+0.9\cdot 3-2]$
-$Q(s=0,a=2)\leftarrow2+0.1[5+2.7-2]$
-$Q(s=0,a=2)\leftarrow2+0.1\cdot 5.7$
-$Q(s=0,a=2)\leftarrow2+0.57$
+- $Q(s=0,a=2)\leftarrow2+0.1[5+0.9\cdot 3-2]$
+- $Q(s=0,a=2)\leftarrow2+0.1[5+2.7-2]$
+- $Q(s=0,a=2)\leftarrow2+0.1\cdot 5.7$
+- $Q(s=0,a=2)\leftarrow2+0.57$
 
 결과
+
 $Q(s=0,a=2) = 2.57$
+
 Sarsa는 이처럼 실제로 선택한 행동의 결과를 학습에 반영하므로, 행동 정책이 목표 정책과 동일하다는 점에서 On-Policy 학습 방식으로 구분됩니다.
